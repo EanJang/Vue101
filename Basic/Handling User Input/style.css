@@ -18,15 +18,17 @@ h1 {
 }
 
 input {
-    margin: 10px 0;
-    padding: 5px;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
 button {
     display: block;
-    margin-bottom: 10px;
-    width: 170px;
-    height: 25px;
+    margin-bottom: 15px;
+    width: 200px;
+    height: 30px;
     background-color:#0a0a23;
     color: #fff;
     border:none;
