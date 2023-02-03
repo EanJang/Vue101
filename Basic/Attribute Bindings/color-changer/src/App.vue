@@ -1,7 +1,9 @@
 <template>
-  <ColorButton colorToChange="Red" />
-  <ColorButton colorToChange="Blue" />
-  <ColorButton colorToChange="Green" />
+  <div class="button-wrapper">
+    <ColorButton colorToChange="Red" />
+    <ColorButton colorToChange="Green" />
+    <ColorButton colorToChange="Blue" />
+  </div>
 </template>
 
 <script>
@@ -11,9 +13,6 @@ export default {
   name: 'App',
   components: {
     ColorButton
-  },
-  methods: {
-
   }
 }
 </script>
@@ -27,4 +26,10 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
 </style>
+
