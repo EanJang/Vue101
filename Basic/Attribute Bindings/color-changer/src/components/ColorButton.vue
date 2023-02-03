@@ -1,5 +1,5 @@
 <template>
-    <button :style="{color: currentColor}" @click="changeColor">Turn me {{ colorToChange }}</button>
+    <button :style="{color: currentColor}" @click="changeColor"><span>{{ message }}</span> {{ colorToChange }}</button>
 </template>
 
 <script>
@@ -10,12 +10,19 @@ export default {
   },
   data() {
     return {
-      currentColor: 'black'
+      currentColor: 'black',
+      isChanged: false,
+    }
+  },
+  computed: {
+    message() {
+      return this.isChanged ? 'I am' : 'Turn me'
     }
   },
   methods: {
     changeColor() {
       this.currentColor = this.colorToChange;
+      this.isChanged = !this.isChanged;
     }
   }
 }
