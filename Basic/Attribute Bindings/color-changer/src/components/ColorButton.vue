@@ -1,12 +1,22 @@
 <template>
-    <button>Turn me {{ color }}</button>
+    <button :style="{color: currentColor}" @click="changeColor">Turn me {{ colorToChange }}</button>
 </template>
 
 <script>
 export default {
   name: 'ColorButton',
   props: {
-    color: String
+    colorToChange: String
+  },
+  data() {
+    return {
+      currentColor: 'black'
+    }
+  },
+  methods: {
+    changeColor() {
+      this.currentColor = this.colorToChange;
+    }
   }
 }
 </script>

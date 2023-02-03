@@ -1,7 +1,7 @@
 <template>
-  <ColorButton color="Red" />
-  <ColorButton color="Blue" />
-  <ColorButton color="Green" />
+  <ColorButton colorToChange="Red" />
+  <ColorButton colorToChange="Blue" />
+  <ColorButton colorToChange="Green" />
 </template>
 
 <script>
