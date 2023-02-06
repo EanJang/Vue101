@@ -13,8 +13,11 @@
     <h3>Push & Pop</h3>
     <button v-on:click="secondList.push(secondList.length + 1)">PUSH</button>
     <button v-on:click="secondList.pop()">POP</button>
-    <ul>
+    <ul v-if="secondList.length">
       <li v-for="(item, index) of secondList" v-bind:key="index">{{ item }}</li>
+    </ul>
+    <ul v-else>
+      <li>Your List is Empty:(</li>
     </ul>
     <ul>
       <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
