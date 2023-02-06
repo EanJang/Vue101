@@ -11,6 +11,11 @@
     </ul>
     <p v-else-if="show">Your List is Empty:(</p>
     <h3>Push & Pop</h3>
+    {/* <button>PUSH</button>
+    <button>POP</button>
+    <ul>
+      <li v-for="(item, index) of secondList" v-bind:key="index">{{ item }}</li>
+    </ul> */}
     <ul>
       <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
@@ -38,7 +43,8 @@ export default {
   data() {
     return {
       show: true,
-      firstList: [1, 2, 3]
+      firstList: ['apple🍎', 'banana🍌', 'cherry🍒'],
+      // secondList: [1, 2, 3]
     }
   },
   computed: {
@@ -65,9 +71,12 @@ li {
 button {
   background: none;
   border: none;
-  border-bottom: 1px solid #42b983;
+  // text-decoration: underline 1px solid #42b983;
   color: #42b983;
   cursor: pointer;
   margin: 30px 0 5px 0;
 }
+{/* button:nth-child(2) {
+  margin-left: 10px;
+} */}
 </style>
