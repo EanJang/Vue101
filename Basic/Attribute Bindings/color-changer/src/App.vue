@@ -1,8 +1,13 @@
 <template>
   <div class="button-wrapper">
-    <ColorButton colorToChange="Red" />
-    <ColorButton colorToChange="Green" />
-    <ColorButton colorToChange="Blue" />
+    <div class="normal-buttons">
+      <ColorButton isNormal=true colorToChange="Red" />
+      <ColorButton isNormal=true colorToChange="Green" />
+      <ColorButton isNormal=true colorToChange="Blue" />
+    </div>
+    <div class="toggle-button">
+      <ColorButton colorToChange="Black" />
+    </div>
   </div>
 </template>
 
@@ -29,7 +34,13 @@ export default {
 
 .button-wrapper {
   display: flex;
+  flex-direction: column;
+}
+
+.normal-buttons {
+  display: flex;
   justify-content: space-evenly;
+  margin-bottom: 10rem;
 }
 </style>
 

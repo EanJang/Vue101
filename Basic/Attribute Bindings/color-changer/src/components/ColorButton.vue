@@ -1,25 +1,36 @@
 <template>
-    <button :style="{color: currentColor}" @click="changeColor"><span>{{ message }}</span> {{ colorToChange }}</button>
+    <button v-if="isNormal" :style="{color: currentColor}" @click="changeColor"><span>{{ message }}</span> {{ colorToChange }}</button>
+    <button v-else :class="{rainbow: isToggle}" @click="toggleRainbow"><span>{{ message }}</span> {{ colorToChange }} <span v-if="this.isChanged">anymore</span> </button>
 </template>
 
 <script>
 export default {
   name: 'ColorButton',
   props: {
-    colorToChange: String
+    colorToChange: String,
+    isNormal: Boolean
   },
   data() {
     return {
       currentColor: 'black',
       isChanged: false,
+      isToggle: false
     }
   },
   computed: {
     message() {
-      return this.isChanged ? 'I am' : 'Turn me'
+      if (this.isNormal) {
+        return this.isChanged ? 'I am' : 'Turn me'
+      } else {
+        return this.isChanged ? 'I am not' : 'Now I am'
+      }
     }
   },
   methods: {
+    toggleRainbow() {
+      this.isToggle = !this.isToggle;
+      this.isChanged = !this.isChanged;
+    },
     changeColor() {
       this.currentColor = this.colorToChange;
       this.isChanged = !this.isChanged;
@@ -51,5 +62,10 @@ export default {
     background-color: #000000;
     color: #ffffff;
     border: solid 2px #ffffff;
+  }
+
+  .rainbow {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    color: white;
   }
 </style>
