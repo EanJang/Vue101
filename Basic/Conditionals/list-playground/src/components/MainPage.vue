@@ -19,7 +19,10 @@
       <li>Your List is Empty:(</li>
     </ul>
     <h3>Reverse</h3>
-
+    <button v-on:click="thirdList.reverse()">PHASE of the MOON</button>
+      <ul>
+        <li v-for="(item, index) of thirdList" v-bind:key="index">{{ item }}</li>
+      </ul>
   </div>
 </template>
 
@@ -33,7 +36,8 @@ export default {
     return {
       show: true,
       firstList: ['apple🍎', 'banana🍌', 'cherry🍒'],
-      secondList: [1, 2, 3]
+      secondList: [1, 2, 3],
+      thirdList: ['🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘']
     }
   },
   computed: {
