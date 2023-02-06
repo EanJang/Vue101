@@ -5,7 +5,7 @@
       Toggle, Push & Pop, and Reverse Your List!
     </p>
     <h3>Show & Hide</h3>
-    <button v-on:click="show = !show">SHOW</button>
+    <button v-on:click="show = !show">{{ showOrHide }}</button>
     <ul v-if="show">
       <li v-for="(item, index) of list" v-bind:key="index">{{ item }}</li>
     </ul>
@@ -39,6 +39,11 @@ export default {
       show: true,
       list: [1, 2, 3]
     }
+  },
+  computed: {
+    showOrHide() {
+      return this.show ? 'HIDE' : 'SHOW';
+    }
   }
 }
 </script>
@@ -55,9 +60,6 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 button {
   background: none;
