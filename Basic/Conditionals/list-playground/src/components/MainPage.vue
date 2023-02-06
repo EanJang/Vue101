@@ -5,10 +5,11 @@
       Toggle, Push & Pop, and Reverse Your List!
     </p>
     <h3>Show & Hide</h3>
-    <button v-on:click="show = !show">{{ showOrHide }}</button>
-    <ul v-if="show">
-      <li v-for="(item, index) of list" v-bind:key="index">{{ item }}</li>
+    <button v-if="firstList.length" v-on:click="show = !show">{{ showOrHide }}</button>
+    <ul v-if="show && firstList.length">
+      <li v-for="(item, index) of firstList" v-bind:key="index">{{ item }}</li>
     </ul>
+    <p v-else-if="show">Your List is Empty:(</p>
     <h3>Push & Pop</h3>
     <ul>
       <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
@@ -37,7 +38,7 @@ export default {
   data() {
     return {
       show: true,
-      list: [1, 2, 3]
+      firstList: [1, 2, 3]
     }
   },
   computed: {
