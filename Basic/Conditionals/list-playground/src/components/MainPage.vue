@@ -12,7 +12,7 @@
     <p v-else-if="show">Your List is Empty:(</p>
     <h3>Push & Pop</h3>
     <button v-on:click="secondList.push(secondList.length + 1)">PUSH</button>
-    <button>POP</button>
+    <button v-on:click="secondList.pop()">POP</button>
     <ul>
       <li v-for="(item, index) of secondList" v-bind:key="index">{{ item }}</li>
     </ul>
