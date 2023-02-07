@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <MainPage msg="Welcome to Your Vue.js App"/>
+  <MainPage msg="Welcome to Vue.js Form Playground"/>
 </template>
 
 <script>
