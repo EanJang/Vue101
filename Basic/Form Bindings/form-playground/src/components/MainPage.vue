@@ -35,34 +35,35 @@
       <li>
         <label class="control control-checkbox" for="multi1">
           Cheese🧀
-          <input type="checkbox" id="multi1" />
+          <input type="checkbox" id="multi1" value="🧀" v-model="orderedList" />
           <div class="control_indicator"></div>
         </label>
       </li>
       <li>
         <label class="control control-checkbox" for="multi2">
           Chocolate🍫
-          <input type="checkbox" id="multi2" />
+          <input type="checkbox" id="multi2" value="🍫" v-model="orderedList" />
           <div class="control_indicator"></div>
         </label>
       </li>
       <li>
         <label class="control control-checkbox" for="multi3">
           Cake🍰
-          <input type="checkbox" id="multi3" />
+          <input type="checkbox" id="multi3" value="🍰" v-model="orderedList" />
           <div class="control_indicator"></div>
         </label>
       </li>
       <li>
         <label class="control control-checkbox" for="multi4">
           Caffè Latte☕
-          <input type="checkbox" id="multi4" />
+          <input type="checkbox" id="multi4" value="☕" v-model="orderedList" />
           <div class="control_indicator"></div>
         </label>
       </li>
     </ul>
-    <ul>
-      <p>Checked List</p>
+    <ul class="order-box">
+      <p>I will order:</p>
+      <p>{{ orderedList }}</p>
     </ul>
     <h3>Radio</h3>
     <ul>
@@ -98,6 +99,7 @@ export default {
     return {
       inputText: '',
       checked: false,
+      orderedList: [],
     }
   },
 }
@@ -232,5 +234,8 @@ input[type=text]:focus {
 }
 .checked {
   text-decoration: underline 1px solid #42b983;
+}
+.order-box {
+  margin-top: 40px;
 }
 </style>
