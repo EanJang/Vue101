@@ -67,7 +67,31 @@
     </ul>
     <h3>Radio</h3>
     <ul>
-      <li></li>
+      <li>
+        <label class="control control-radio" for="radio1">
+          Female
+          <input type="radio" id="radio1" value="Female" v-model="picked" />
+          <div class="control_indicator"></div>
+        </label>
+      </li>
+      <li>
+        <label class="control control-radio" for="radio2">
+          Male
+          <input type="radio" id="radio2" value="Male" v-model="picked" />
+          <div class="control_indicator"></div>
+        </label>
+      </li>
+      <li>
+        <label class="control control-radio" for="radio3">
+          Gender Neutral
+          <input type="radio" id="radio3" value="Gender Neutral" v-model="picked" />
+          <div class="control_indicator"></div>
+        </label>
+      </li>
+    </ul>
+    <ul class="order-box">
+      <p>I am:</p>
+      <p class="order-list">{{ picked }}</p>
     </ul>
     <h3>Select</h3>
     <ul>
@@ -104,6 +128,7 @@ export default {
       inputText: '',
       checked: false,
       multiChecked: [],
+      picked: 'Gender Neutral'
     }
   },
 }
@@ -203,6 +228,37 @@ input[type=text]:focus {
     z-index: 99999;
     transform: scale(0);
 }
+.control-radio .control_indicator {
+    border-radius: 50%;
+}
+
+.control-radio .control_indicator:after {
+    left: 7px;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    transition: background 250ms;
+}
+.control-radio input:disabled ~ .control_indicator:after {
+    background: #7b7b7b;
+}.control-radio .control_indicator::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: #2aa1c0;
+    border-radius: 3rem;
+    opacity: 0.6;
+    z-index: 99999;
+    transform: scale(0);
+}
 @keyframes s-ripple {
     0% {
         transform: scale(0);
@@ -230,10 +286,44 @@ input[type=text]:focus {
         transform: scale(1);
     }
 }
+@keyframes s-ripple {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.01;
+        transform: scale(1);
+    }
+}
+@keyframes s-ripple-dup {
+   0% {
+       transform: scale(0);
+    }
+   30% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
 .control-checkbox input + .control_indicator::before {
     animation: s-ripple 250ms ease-out;
 }
 .control-checkbox input:checked + .control_indicator::before {
+    animation-name: s-ripple-dup;
+}
+.control-radio input + .control_indicator::before {
+    animation: s-ripple 250ms ease-out;
+}
+.control-radio input:checked + .control_indicator::before {
     animation-name: s-ripple-dup;
 }
 .checked {
@@ -241,6 +331,7 @@ input[type=text]:focus {
 }
 .order-box {
   margin-top: 40px;
+  margin-bottom: 55px;
 }
 .order-list {
   text-decoration: underline 1px solid black;
