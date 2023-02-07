@@ -6,7 +6,14 @@
     </p>
     <h3>Text Input</h3>
     <ul>
-      <li></li>
+      <li>
+        <input type="text" v-model="inputText" />
+      </li>
+    </ul>
+    <ul>
+      <li class="mirrorText">
+        {{ inputText }}
+      </li>
     </ul>
     <h3>Checkbox</h3>
     <ul>
@@ -36,7 +43,12 @@ export default {
   name: 'MainPage',
   props: {
     msg: String
-  }
+  },
+  data() {
+    return {
+      inputText: ''
+    }
+  },
 }
 </script>
 
@@ -53,7 +65,18 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #42b983;
+input[type=text] {
+  font-size: 13px;
+  text-align: center;
+  border-color: #42b983;
+  padding: 8px 10px;
+  border-width: 1px;
+  border-style: dotted;
+}
+input[type=text]:focus {
+  outline:none;
+}
+.mirrorText {
+  text-decoration: underline 1px solid #42b983;
 }
 </style>
