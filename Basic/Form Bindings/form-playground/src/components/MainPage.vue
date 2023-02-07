@@ -20,14 +20,14 @@
       <li>
         <label class="control control-checkbox">
           Checkbox
-          <input type="checkbox" checked="checked" />
+          <input type="checkbox" v-model="checked" />
           <div class="control_indicator"></div>
         </label>
       </li>
     </ul>
     <ul>
-      <li>
-        Checked?
+      <li class="checked">
+        {{ isChecked }}
       </li>
     </ul>
     <h3>Multi Checkbox</h3>
@@ -55,9 +55,19 @@ export default {
   props: {
     msg: String
   },
+  computed: {
+    isChecked() {
+      if (this.checked) {
+        return 'Checked!'
+      } else {
+        return ''
+      }
+    }
+  },
   data() {
     return {
-      inputText: ''
+      inputText: '',
+      checked: false
     }
   },
 }
@@ -103,7 +113,7 @@ input[type=text]:focus {
 }
 .control_indicator {
   position: absolute;
-  top: 2px;
+  top: 1px;
   left: 0;
   height: 20px;
   width: 20px;
@@ -170,10 +180,10 @@ input[type=text]:focus {
     }
 }
 @keyframes s-ripple-dup {
-   0% {
-       transform: scale(0);
+    0% {
+        transform: scale(0);
     }
-   30% {
+    30% {
         transform: scale(1);
     }
     60% {
@@ -189,5 +199,8 @@ input[type=text]:focus {
 }
 .control-checkbox input:checked + .control_indicator::before {
     animation-name: s-ripple-dup;
+}
+.checked {
+  text-decoration: underline 1px solid #42b983;
 }
 </style>
