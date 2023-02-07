@@ -53,6 +53,13 @@
           <div class="control_indicator"></div>
         </label>
       </li>
+      <li>
+        <label class="control control-checkbox" for="multi4">
+          Caffè Latte☕
+          <input type="checkbox" id="multi4" />
+          <div class="control_indicator"></div>
+        </label>
+      </li>
     </ul>
     <ul>
       <p>Checked List</p>
@@ -90,7 +97,7 @@ export default {
   data() {
     return {
       inputText: '',
-      checked: false
+      checked: false,
     }
   },
 }
