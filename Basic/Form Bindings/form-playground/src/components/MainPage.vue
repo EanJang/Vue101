@@ -32,7 +32,30 @@
     </ul>
     <h3>Multi Checkbox</h3>
     <ul>
-      <li></li>
+      <li>
+        <label class="control control-checkbox" for="multi1">
+          Cheese🧀
+          <input type="checkbox" id="multi1" />
+          <div class="control_indicator"></div>
+        </label>
+      </li>
+      <li>
+        <label class="control control-checkbox" for="multi2">
+          Chocolate🍫
+          <input type="checkbox" id="multi2" />
+          <div class="control_indicator"></div>
+        </label>
+      </li>
+      <li>
+        <label class="control control-checkbox" for="multi3">
+          Cake🍰
+          <input type="checkbox" id="multi3" />
+          <div class="control_indicator"></div>
+        </label>
+      </li>
+    </ul>
+    <ul>
+      <p>Checked List</p>
     </ul>
     <h3>Radio</h3>
     <ul>
