@@ -120,9 +120,10 @@
           <option>ISTP</option>
         </select>
       </li>
+    </ul>
+    <ul>
       <li>Your are <span class="personality">{{ personalityType }}</span></li>
     </ul>
-
   </div>
 </template>
 
