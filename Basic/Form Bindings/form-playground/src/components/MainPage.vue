@@ -4,41 +4,13 @@
     <p>
       We can create two-way bindings between state and form inputs using the v-model directive!
     </p>
+    <br />
     <TextInput />
     <CheckBox />
     <MultiCheckBox />
     <RadioCheck />
-    <h3>Select</h3>
-    <ul>
-      <li>
-        <select v-model="selected">
-          <option disabled value="">Please select your time</option>
-          <option>Morning</option>
-          <option>Afternoon</option>
-          <option>Night</option>
-        </select>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        {{ selectedTime }}
-      </li>
-    </ul>
-    <h3>Multi Select</h3>
-    <ul>
-      <li>
-        <select multiple v-model="multiSelected">
-          <option disabled value="">Choose your MBTI</option>
-          <option>INTJ</option>
-          <option>INFJ</option>
-          <option>ISTJ</option>
-          <option>ISTP</option>
-        </select>
-      </li>
-    </ul>
-    <ul>
-      <li>Your are <span class="personality">{{ personalityType }}</span></li>
-    </ul>
+    <SelectBox />
+    <MultiSelectBox />
   </div>
 </template>
 
@@ -47,6 +19,8 @@ import TextInput from './Form/TextInput'
 import CheckBox from './Form/CheckBox'
 import MultiCheckBox from './Form/MultiCheckBox'
 import RadioCheck from './Form/RadioCheck'
+import SelectBox from './Form/SelectBox'
+import MultiSelectBox from './Form/MultiSelectBox'
 
 export default {
   name: 'MainPage',
@@ -54,48 +28,13 @@ export default {
     TextInput,
     CheckBox,
     MultiCheckBox,
-    RadioCheck
+    RadioCheck,
+    SelectBox,
+    MultiSelectBox
   },
   props: {
     msg: String
-  },
-  computed: {
-    selectedTime() {
-      let time = this.selected;
-      if (!time) {
-        return ''
-      } else if (time === 'Morning') {
-        return '🌄🛌☕'
-      } else if (time === 'Afternoon') {
-        return '🏃☀️'
-      } else return '🛌💤😴'
-    },
-    personalityType() {
-      let personality = this.multiSelected.toString();
-      switch(personality) {
-        case "INTJ":
-          return "an Architect!";
-        case "INFJ":
-          return "an Advocate!";
-        case "ISTJ":
-          return "a Logistician!";
-        case "ISTP":
-          return "a Virtuso!";
-        default:
-          return "unpredictable...";
-      }
-    }
-  },
-  data() {
-    return {
-      // inputText: '',
-      // checked: false,
-      // multiChecked: [],
-      // picked: 'Gender Neutral',
-      selected: '',
-      multiSelected: ''
-    }
-  },
+  }
 }
 </script>
 
@@ -294,8 +233,5 @@ select {
 }
 select:focus {
   outline:none;
-}
-.personality {
-  color: #42b983;
 }
 </style>
