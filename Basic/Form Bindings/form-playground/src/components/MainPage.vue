@@ -155,8 +155,19 @@ export default {
       } else return '🛌💤😴'
     },
     personalityType() {
-      let personality = this.multiSelected;
-      return personality;
+      let personality = this.multiSelected.toString();
+      switch(personality) {
+        case "INTJ":
+          return "an Architect!";
+        case "INFJ":
+          return "an Advocate!";
+        case "ISTJ":
+          return "a Logistician!";
+        case "ISTP":
+          return "a Virtuso!";
+        default:
+          return "unpredictable...";
+      }
     }
   },
   data() {
@@ -395,6 +406,6 @@ select:focus {
   text-underline-offset: 4px;
 }
 .personality {
-  color: green;
+  color: #42b983;
 }
 </style>
