@@ -7,34 +7,7 @@
     <TextInput />
     <CheckBox />
     <MultiCheckBox />
-    <h3>Radio</h3>
-    <ul>
-      <li>
-        <label class="control control-radio" for="radio1">
-          Female
-          <input type="radio" id="radio1" value="Female" v-model="picked" />
-          <div class="control_indicator"></div>
-        </label>
-      </li>
-      <li>
-        <label class="control control-radio" for="radio2">
-          Male
-          <input type="radio" id="radio2" value="Male" v-model="picked" />
-          <div class="control_indicator"></div>
-        </label>
-      </li>
-      <li>
-        <label class="control control-radio" for="radio3">
-          Gender Neutral
-          <input type="radio" id="radio3" value="Gender Neutral" v-model="picked" />
-          <div class="control_indicator"></div>
-        </label>
-      </li>
-    </ul>
-    <ul class="picked-box">
-      <p>I am:</p>
-      <p class="picked-list">{{ picked }}</p>
-    </ul>
+    <RadioCheck />
     <h3>Select</h3>
     <ul>
       <li>
@@ -73,22 +46,20 @@
 import TextInput from './Form/TextInput'
 import CheckBox from './Form/CheckBox'
 import MultiCheckBox from './Form/MultiCheckBox'
+import RadioCheck from './Form/RadioCheck'
 
 export default {
   name: 'MainPage',
   components: {
     TextInput,
     CheckBox,
-    MultiCheckBox
+    MultiCheckBox,
+    RadioCheck
   },
   props: {
     msg: String
   },
   computed: {
-    orderedList() {
-      const list = this.multiChecked.toString().replaceAll(",", " "); //remove bracket from array, and replace comma with blank
-      return list;
-    },
     selectedTime() {
       let time = this.selected;
       if (!time) {
@@ -119,8 +90,8 @@ export default {
     return {
       // inputText: '',
       // checked: false,
-      multiChecked: [],
-      picked: 'Gender Neutral',
+      // multiChecked: [],
+      // picked: 'Gender Neutral',
       selected: '',
       multiSelected: ''
     }
@@ -323,14 +294,6 @@ select {
 }
 select:focus {
   outline:none;
-}
-.picked-box {
-  margin-top: 40px;
-  margin-bottom: 55px;
-}
-.picked-list {
-  text-decoration: underline 1px solid #42b983;
-  text-underline-offset: 4px;
 }
 .personality {
   color: #42b983;
