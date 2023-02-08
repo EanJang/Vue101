@@ -97,10 +97,10 @@
     <ul>
       <li>
         <select v-model="selected">
-        <option disabled value="">Please select your time</option>
-        <option>Morning</option>
-        <option>Afternoon</option>
-        <option>Night</option>
+          <option disabled value="">Please select your time</option>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Night</option>
         </select>
       </li>
     </ul>
@@ -111,8 +111,18 @@
     </ul>
     <h3>Multi Select</h3>
     <ul>
-      <li></li>
+      <li>
+        <select multiple>
+          <option disabled value="">Choose your MBTI</option>
+          <option>INTJ</option>
+          <option>INFJ</option>
+          <option>ISTJ</option>
+          <option>ISTP</option>
+        </select>
+      </li>
+      <li>Your are...</li>
     </ul>
+
   </div>
 </template>
 
