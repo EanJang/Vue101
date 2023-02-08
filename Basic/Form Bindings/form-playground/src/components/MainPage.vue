@@ -4,17 +4,7 @@
     <p>
       We can create two-way bindings between state and form inputs using the v-model directive!
     </p>
-    <h3>Text Input</h3>
-    <ul>
-      <li>
-        <input type="text" v-model="inputText" />
-      </li>
-    </ul>
-    <ul>
-      <li>
-        {{ inputText }}
-      </li>
-    </ul>
+    <TextInput />
     <h3>Checkbox</h3>
     <ul>
       <li>
@@ -128,8 +118,13 @@
 </template>
 
 <script>
+import TextInput from './Form/TextInput'
+
 export default {
   name: 'MainPage',
+  components: {
+    TextInput
+  },
   props: {
     msg: String
   },
@@ -173,7 +168,7 @@ export default {
   },
   data() {
     return {
-      inputText: '',
+      // inputText: '',
       checked: false,
       multiChecked: [],
       picked: 'Gender Neutral',
@@ -185,7 +180,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 h3 {
   margin: 40px 0 0;
 }
@@ -197,17 +192,7 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-input[type=text] {
-  font-size: 13px;
-  text-align: center;
-  border-color: #42b983;
-  padding: 8px 10px;
-  border-width: 1px;
-  border-style: dotted;
-}
-input[type=text]:focus {
-  outline:none;
-}
+
 .control {
     display: block;
     position: relative;
