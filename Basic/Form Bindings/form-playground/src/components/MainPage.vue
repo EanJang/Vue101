@@ -89,13 +89,25 @@
         </label>
       </li>
     </ul>
-    <ul class="order-box">
+    <ul class="picked-box">
       <p>I am:</p>
-      <p class="order-list">{{ picked }}</p>
+      <p class="picked-list">{{ picked }}</p>
     </ul>
     <h3>Select</h3>
     <ul>
-      <li></li>
+      <li>
+        <select v-model="selected">
+        <option disabled value="">Please select your time</option>
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Night</option>
+        </select>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        {{ selectedTime }}
+      </li>
     </ul>
     <h3>Multi Select</h3>
     <ul>
@@ -121,6 +133,16 @@ export default {
     orderedList() {
       const list = this.multiChecked.toString().replaceAll(",", " "); //remove bracket from array, and replace comma with blank
       return list;
+    },
+    selectedTime() {
+      let time = this.selected;
+      if (!time) {
+        return ''
+      } else if (time === 'Morning') {
+        return '🌄🛌☕'
+      } else if (time === 'Afternoon') {
+        return '🏃☀️'
+      } else return '🛌💤😴'
     }
   },
   data() {
@@ -128,7 +150,8 @@ export default {
       inputText: '',
       checked: false,
       multiChecked: [],
-      picked: 'Gender Neutral'
+      picked: 'Gender Neutral',
+      selected: ''
     }
   },
 }
@@ -300,10 +323,10 @@ input[type=text]:focus {
     }
 }
 @keyframes s-ripple-dup {
-   0% {
-       transform: scale(0);
+    0% {
+        transform: scale(0);
     }
-   30% {
+    30% {
         transform: scale(1);
     }
     60% {
@@ -335,6 +358,25 @@ input[type=text]:focus {
 }
 .order-list {
   text-decoration: underline 1px solid black;
+  text-underline-offset: 4px;
+}
+select {
+  font-size: 13px;
+  text-align: center;
+  border-color: #42b983;
+  padding: 4px 10px;
+  border-width: 1px;
+  border-style: dotted;
+}
+select:focus {
+  outline:none;
+}
+.picked-box {
+  margin-top: 40px;
+  margin-bottom: 55px;
+}
+.picked-list {
+  text-decoration: underline 1px solid #42b983;
   text-underline-offset: 4px;
 }
 </style>
