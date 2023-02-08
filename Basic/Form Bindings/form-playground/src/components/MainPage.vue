@@ -5,21 +5,7 @@
       We can create two-way bindings between state and form inputs using the v-model directive!
     </p>
     <TextInput />
-    <h3>Checkbox</h3>
-    <ul>
-      <li>
-        <label class="control control-checkbox">
-          Checkbox
-          <input type="checkbox" v-model="checked" />
-          <div class="control_indicator"></div>
-        </label>
-      </li>
-    </ul>
-    <ul>
-      <li class="checked">
-        {{ isChecked }}
-      </li>
-    </ul>
+    <CheckBox />
     <h3>Multi Checkbox</h3>
     <ul>
       <li>
@@ -119,23 +105,18 @@
 
 <script>
 import TextInput from './Form/TextInput'
+import CheckBox from './Form/CheckBox'
 
 export default {
   name: 'MainPage',
   components: {
-    TextInput
+    TextInput,
+    CheckBox
   },
   props: {
     msg: String
   },
   computed: {
-    isChecked() {
-      if (this.checked) {
-        return 'Checked!'
-      } else {
-        return ''
-      }
-    },
     orderedList() {
       const list = this.multiChecked.toString().replaceAll(",", " "); //remove bracket from array, and replace comma with blank
       return list;
@@ -169,7 +150,7 @@ export default {
   data() {
     return {
       // inputText: '',
-      checked: false,
+      // checked: false,
       multiChecked: [],
       picked: 'Gender Neutral',
       selected: '',
