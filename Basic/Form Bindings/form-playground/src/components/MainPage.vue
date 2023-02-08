@@ -112,7 +112,7 @@
     <h3>Multi Select</h3>
     <ul>
       <li>
-        <select multiple>
+        <select multiple v-model="multiSelected">
           <option disabled value="">Choose your MBTI</option>
           <option>INTJ</option>
           <option>INFJ</option>
@@ -120,7 +120,7 @@
           <option>ISTP</option>
         </select>
       </li>
-      <li>Your are...</li>
+      <li>Your are <span class="personality">{{ personalityType }}</span></li>
     </ul>
 
   </div>
@@ -153,6 +153,10 @@ export default {
       } else if (time === 'Afternoon') {
         return '🏃☀️'
       } else return '🛌💤😴'
+    },
+    personalityType() {
+      let personality = this.multiSelected;
+      return personality;
     }
   },
   data() {
@@ -161,7 +165,8 @@ export default {
       checked: false,
       multiChecked: [],
       picked: 'Gender Neutral',
-      selected: ''
+      selected: '',
+      multiSelected: ''
     }
   },
 }
@@ -388,5 +393,8 @@ select:focus {
 .picked-list {
   text-decoration: underline 1px solid #42b983;
   text-underline-offset: 4px;
+}
+.personality {
+  color: green;
 }
 </style>
