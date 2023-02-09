@@ -1,12 +1,12 @@
 <template>
 <div class="receipt">
-<h2 class="name"> Brandname </h2>
+<h2 class="name"> Groceries </h2>
 <p class="greeting"> Thank you for your order! </p>
 
 <!-- Order info -->
 <div class="order">
-  <p> Order No : 1234567890 </p>
-  <p> Date : 4/5/2020 </p>
+  <p> Order No : 20201228LEO </p>
+  <p> Date : 09/02/2023 </p>
   <p> Shipping Address : My sweet home </p>
 </div>
 
