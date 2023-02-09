@@ -107,20 +107,6 @@ hr {
   margin: 15px 0;
 }
 
-/* Order details */
-.details {
-  padding-left: 10px;
-  margin-bottom: 35px;
-  overflow: hidden
-}
-
-.details h3 {
-  font-weight: 400;
-  color: #6c8b8e;
-  font-size: 1.5em;
-  margin-bottom: 15px
-}
-
 /* Image and the info of the order */
 .product {
   float: left;
