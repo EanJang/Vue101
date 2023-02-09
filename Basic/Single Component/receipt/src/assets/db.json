@@ -1,0 +1,27 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "product": "apple",
+            "feature": "Gold",
+            "Qty": "2",
+            "Price": "1.3",
+            "img": "https://www.freeiconspng.com/uploads/aesthetic-chair-png-5.png"
+        },
+        {
+            "id": 2,
+            "product": "Orange",
+            "feature": "Blood",
+            "Qty": "1",
+            "Price": "0.7",
+            "img": "https://www.freeiconspng.com/uploads/aesthetic-chair-png-5.png"
+        },{
+            "id": 3,
+            "product": "Cherry",
+            "feature": "Premium",
+            "Qty": "1",
+            "Price": "4",
+            "img": "https://www.freeiconspng.com/uploads/aesthetic-chair-png-5.png"
+        }
+    ]
+}
