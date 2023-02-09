@@ -17,10 +17,10 @@
 
 <!-- Sub and total price -->
 <div class="totalprice">
-  <p class="sub"> Subtotal <span> 23 &dollar; </span></p>
+  <p class="sub"> Subtotal <span> 30 &dollar; </span></p>
   <p class="del"> Delivery <span> 5 &dollar; </span> </p>
   <hr>
-  <p class="tot"> Total <span> 28 &dollar; </span> </p>
+  <p class="tot"> Total <span> 35 &dollar; </span> </p>
 </div>
 
 <!-- Footer -->
