@@ -61,7 +61,7 @@
 
 <script>
 export default {
-  name: 'ReceiptMain'
+  name: 'receipt-main'
 }
 </script>
 
