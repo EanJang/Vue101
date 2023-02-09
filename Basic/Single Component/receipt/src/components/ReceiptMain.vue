@@ -1,13 +1,13 @@
 <template>
 <div class="receipt">
-<h2 class="name"> Groceries </h2>
+<h2 class="name"> GREENWICH </h2>
 <p class="greeting"> Thank you for your order! </p>
 
 <!-- Order info -->
 <div class="order">
   <p> Order No : 20201228LEO </p>
   <p> Date : 09/02/2023 </p>
-  <p> Shipping Address : My sweet home </p>
+  <p> Serve Option : Delivery </p>
 </div>
 
 <hr>
@@ -15,30 +15,46 @@
 <!-- Details -->
 <div class="details">
 
-  <h3> Details </h3>
-  <div class="product">
-    <img src="https://www.freeiconspng.com/uploads/aesthetic-chair-png-5.png" alt="">
+<h3> Details </h3>
+<div class="product">
+    <img src="https://www.freeiconspng.com/uploads/lunch-panini-sandwiches-25.png" alt="">
     <div class="info">
-      <h4> Zmerc </h4>
-      <p> Color: Mercine </p>
+      <h4> Panini Sandwich </h4>
+      <p> Tomato & Mozzarella </p>
       <p> Qty: 1 </p>
     </div>
   </div>
 
-  <p> 128 &dollar; </p>
+  <p> 9 &dollar; </p>
+
+</div>
+
+<!-- Details -->
+<div class="details">
+
+<div class="product">
+    <img src="https://www.freeiconspng.com/uploads/lunch-png-8.png" alt="">
+    <div class="info">
+      <h4> Fresh Lunch Set </h4>
+      <p> Turkey Bacon </p>
+      <p> Qty: 1 </p>
+    </div>
+  </div>
+
+  <p> 14 &dollar; </p>
 
 </div>
 
 <!-- Sub and total price -->
 <div class="totalprice">
-  <p class="sub"> Subtotal <span> 128 &dollar; </span></p>
-  <p class="del"> Delivery <span> 10 &dollar; </span> </p>
+  <p class="sub"> Subtotal <span> 23 &dollar; </span></p>
+  <p class="del"> Delivery <span> 5 &dollar; </span> </p>
   <hr>
-  <p class="tot"> Total <span> 138 &dollar; </span> </p>
+  <p class="tot"> Total <span> 28 &dollar; </span> </p>
 </div>
 
 <!-- Footer -->
-<footer> Lorem ipsum dolor sit amet consectetur adipisicing. </footer>
+<footer> Happy Meal for your Happy Day! </footer>
 
 </div>
 </template>
@@ -70,7 +86,7 @@ body {
 /* The Receipt */
 .receipt {
   width: 360px;
-  height: 720px;
+  height: 800px;
   background-color: white;
   border-radius: 30px;
   position: relative;
@@ -137,7 +153,8 @@ hr {
 }
 
 .product img {
-  width: 65px;
+  width: 70px;
+  height: 70px;
   float: left
 }
 
@@ -166,6 +183,10 @@ hr {
 }
 
 /* Total price */
+.totalprice {
+  margin-top: 40px;
+}
+
 .totalprice p {
   padding-left: 10px
 }
