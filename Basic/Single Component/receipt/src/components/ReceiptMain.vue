@@ -5,9 +5,9 @@
 
 <!-- Order info -->
 <div class="order">
-  <p> Order No : 20201228LEO </p>
-  <p> Date : 09/02/2023 </p>
-  <p> Serve Option : Delivery </p>
+  <p> Order No : {{ this.orderInfo.orderNo }} </p>
+  <p> Date : {{ this.orderInfo.orderDate }} </p>
+  <p> Serve Option : {{ this.orderInfo.serveOption }} </p>
 </div>
 
 <hr>
@@ -36,6 +36,22 @@ export default {
   name: 'receipt-main',
   components: {
     OrderedProduct
+  },
+  data() {
+    return {
+      orderInfo: [],
+      orderList: []
+    }
+  },
+  methods: {
+    async getOrderInfo() {
+      const res = await fetch("http://localhost:3000/orderInfo");
+      const finalRes = await res.json();
+      this.orderInfo = finalRes[0];
+    }
+  },
+  mounted() {
+    this.getOrderInfo();
   }
 }
 </script>
@@ -105,35 +121,6 @@ body {
 hr {
   border: .7px solid #ddd;
   margin: 15px 0;
-}
-
-/* Image and the info of the order */
-.product {
-  float: left;
-  width: 83%
-}
-
-.product img {
-  width: 70px;
-  height: 70px;
-  float: left
-}
-
-.product .info {
-  float: left;
-  margin-left: 15px
-}
-
-.product .info h4 {
-  color: #6f8d90;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-top: 10px
-}
-
-.product .info p {
-  font-size: 12px;
-  color: #aaa;
 }
 
 /* Net price */

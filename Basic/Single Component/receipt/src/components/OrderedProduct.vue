@@ -27,7 +27,12 @@
 
 <script>
     export default {
-        name: 'OrderedProduct'
+        name: 'OrderedProduct',
+        data() {
+            return {
+                orderItem: []
+            }
+        }
     }
 </script>
 
