@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       orderInfo: [],
-      orderList: []
+      orderList: {}
     }
   },
   methods: {
@@ -48,10 +48,17 @@ export default {
       const res = await fetch("http://localhost:3000/orderInfo");
       const finalRes = await res.json();
       this.orderInfo = finalRes[0];
+    },
+    async getOrderList() {
+      const res = await fetch("http://localhost:3000/products");
+      const finalRes = await res.json();
+      this.orderList = finalRes;
+      // console.log(this.orderList);
     }
   },
   mounted() {
     this.getOrderInfo();
+    this.getOrderList();
   }
 }
 </script>
