@@ -1,3 +1,5 @@
+const { Axios, default: axios } = require("axios");
+
 <template>
 <div class="receipt">
 <h2 class="name"> GREENWICH </h2>
@@ -31,6 +33,7 @@
 
 <script>
 import OrderedProduct from './OrderedProduct'
+const axios = require('axios').default;
 
 export default {
   name: 'receipt-main',
@@ -44,10 +47,11 @@ export default {
     }
   },
   methods: {
-    async getOrderInfo() {
-      const res = await fetch("http://localhost:3000/orderInfo");
-      const finalRes = await res.json();
-      this.orderInfo = finalRes[0];
+    getOrderInfo() {
+      axios.get('http://localhost:3000/orderInfo')
+        .then((res) => {
+          this.orderInfo = res.data[0];
+        })
     },
     async getOrderList() {
       const res = await fetch("http://localhost:3000/products");
