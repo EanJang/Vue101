@@ -1,36 +1,29 @@
 <template>
-    <div class="details">
-        <h3> Details </h3>
+
+<div v-for="(menu, index) in orderedMenu" :key="index" class="details">
+        <h3 v-if="menu.id === 1"> Details </h3>
         <div class="product">
-            <img src="https://www.freeiconspng.com/uploads/lunch-panini-sandwiches-25.png" alt="">
+            <img :src="menu.img" alt="{{ menu.alt }}">
             <div class="info">
-                <h4> Panini Sandwich </h4>
-                <p> Tomato & Mozzarella </p>
-                <p> Qty: 1 </p>
+                <h4> {{ menu.menu }} </h4>
+                <p> {{ menu.option }} </p>
+                <p> Qty: {{ menu.Qty }} </p>
             </div>
         </div>
-        <p> 9 &dollar; </p>
+        <p> {{ menu.Price }} &dollar; </p>
     </div>
 
-    <div class="details">
-        <div class="product">
-            <img src="https://www.freeiconspng.com/uploads/lunch-png-8.png" alt="">
-            <div class="info">
-                <h4> Fresh Lunch Set </h4>
-                <p> Turkey Bacon </p>
-                <p> Qty: 1 </p>
-            </div>
-        </div>
-        <p> 14 &dollar; </p>
-    </div>
 </template>
 
 <script>
     export default {
         name: 'OrderedProduct',
+        props: {
+            orderedMenu: Array
+        },
         data() {
             return {
-                orderItem: []
+
             }
         }
     }

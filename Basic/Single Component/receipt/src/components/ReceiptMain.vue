@@ -15,7 +15,7 @@ const { Axios, default: axios } = require("axios");
 <hr>
 
 <!-- Details -->
-<OrderedProduct />
+<OrderedProduct v-bind:orderedMenu="orderList" />
 
 <!-- Sub and total price -->
 <div class="totalprice">
@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       orderInfo: [],
-      orderList: {}
+      orderList: []
     }
   },
   methods: {
@@ -53,11 +53,11 @@ export default {
           this.orderInfo = res.data[0];
         })
     },
-    async getOrderList() {
-      const res = await fetch("http://localhost:3000/products");
-      const finalRes = await res.json();
-      this.orderList = finalRes;
-      // console.log(this.orderList);
+    getOrderList() {
+      axios.get('http://localhost:3000/products')
+        .then((res) => {
+          this.orderList.push(...res.data);
+        })
     }
   },
   mounted() {
