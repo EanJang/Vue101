@@ -1,7 +1,7 @@
 <template>
   <h1>{{ msg }}</h1>
   <div class="editor">
-    <textarea class="input"></textarea>
+    <textarea class="input" :value="input"></textarea>
     <div class="output"></div>
   </div>
 </template>
@@ -11,7 +11,12 @@ export default {
   name: 'EditorMain',
   props: {
     msg: String
-  }
+  },
+  data() {
+    return {
+      input: '# hello'
+    }
+  },
 }
 </script>
 
