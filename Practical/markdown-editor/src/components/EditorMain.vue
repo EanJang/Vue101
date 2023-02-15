@@ -2,11 +2,13 @@
   <h1>{{ msg }}</h1>
   <div class="editor">
     <textarea class="input" :value="input"></textarea>
-    <div class="output"></div>
+    <div class="output" v-html="output"></div>
   </div>
 </template>
 
 <script>
+import { marked } from 'marked';
+
 export default {
   name: 'EditorMain',
   props: {
@@ -14,9 +16,14 @@ export default {
   },
   data() {
     return {
-      input: '# hello'
+      input: '# Hello'
     }
   },
+  computed: {
+    output() {
+      return marked(this.input)
+    }
+  }
 }
 </script>
 
