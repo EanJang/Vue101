@@ -1,7 +1,8 @@
 <template>
+  <h1>{{ msg }}</h1>
   <div class="editor">
-    <h1>{{ msg }}</h1>
-
+    <textarea class="input"></textarea>
+    <div class="output"></div>
   </div>
 </template>
 
@@ -16,7 +17,28 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.editor {
+  height: 100vh;
+  margin: 10px 20px;
+  display: flex;
+}
+.input, .output {
+  overflow: auto;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.input {
+  border: none;
+  border-right: 1px solid #42b983;
+  resize: none;
+  outline: none;
+  background-color: #f5f5f5;
+  font-size: 14px;
+  padding: 20px;
+}
+code {
+  color: #f66;
 }
 </style>
