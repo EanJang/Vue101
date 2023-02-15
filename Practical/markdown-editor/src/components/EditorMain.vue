@@ -1,13 +1,14 @@
 <template>
   <h1>{{ msg }}</h1>
   <div class="editor">
-    <textarea class="input" :value="input"></textarea>
+    <textarea class="input" :value="input" @input="update"></textarea>
     <div class="output" v-html="output"></div>
   </div>
 </template>
 
 <script>
 import { marked } from 'marked';
+import { debounce } from 'lodash-es';
 
 export default {
   name: 'EditorMain',
@@ -23,6 +24,11 @@ export default {
     output() {
       return marked(this.input)
     }
+  },
+  methods: {
+    update: debounce(function (e) {
+      this.input = e.target.value
+    }, 100)
   }
 }
 </script>
