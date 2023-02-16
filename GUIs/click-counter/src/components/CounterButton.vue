@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button>{{ symbol }}</button>
+        <button @click="triggerCount">{{ symbol }}</button>
     </div>
 </template>
 
@@ -10,11 +10,16 @@ export default {
     props: {
         symbol: String
     },
-    data() {
-        return {
-
+    methods: {
+        triggerCount() {
+            console.log(this.symbol);
+            if (this.symbol === "+") {
+                console.log('+');
+            } else {
+                console.log('-');
+            }
         }
-    },
+    }
 }
 </script>
 
