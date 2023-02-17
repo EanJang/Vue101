@@ -14,10 +14,8 @@ export default {
         triggerCount() {
             console.log(this.symbol);
             if (this.symbol === "+") {
-                console.log('+');
                 this.$emit("incrementCount");
             } else {
-                console.log('-');
                 this.$emit("decrementCount");
             }
         }
