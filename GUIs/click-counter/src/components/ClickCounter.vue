@@ -35,7 +35,11 @@ export default {
       this.count++;
     },
     decrement() {
-      this.count--;
+      if (this.count <= 0) {
+        this.count = 0
+      } else {
+        this.count--;
+      }
     }
   }
 }
