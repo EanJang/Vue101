@@ -18,6 +18,7 @@ export default {
                 this.$emit("incrementCount");
             } else {
                 console.log('-');
+                this.$emit("decrementCount");
             }
         }
     }

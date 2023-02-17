@@ -7,7 +7,7 @@
     <h2>SUM</h2>
     <h3>{{ count }}</h3>
     <div class="button-wrapper">
-        <CounterButton symbol="-" />
+        <CounterButton @decrementCount="decrement" symbol="-" />
         <CounterButton @incrementCount="increment" symbol="+" />
     </div>
   </div>
@@ -33,6 +33,9 @@ export default {
   methods: {
     increment() {
       this.count++;
+    },
+    decrement() {
+      this.count--;
     }
   }
 }
