@@ -33,12 +33,15 @@ export default {
   methods: {
     increment() {
       this.count++;
+      this.hits++;
     },
     decrement() {
       if (this.count <= 0) {
         this.count = 0
+        this.hits++;
       } else {
         this.count--;
+        this.hits++;
       }
     }
   }
