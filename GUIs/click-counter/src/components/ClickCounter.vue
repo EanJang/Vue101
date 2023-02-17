@@ -8,7 +8,7 @@
     <h3>{{ count }}</h3>
     <div class="button-wrapper">
         <CounterButton symbol="-" />
-        <CounterButton symbol="+" />
+        <CounterButton @incrementCount="increment" symbol="+" />
     </div>
   </div>
 </template>
@@ -30,6 +30,11 @@ export default {
       count: 0
     }
   },
+  methods: {
+    increment() {
+      this.count++;
+    }
+  }
 }
 </script>
 

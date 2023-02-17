@@ -15,6 +15,7 @@ export default {
             console.log(this.symbol);
             if (this.symbol === "+") {
                 console.log('+');
+                this.$emit("incrementCount");
             } else {
                 console.log('-');
             }
