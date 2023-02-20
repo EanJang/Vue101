@@ -33,49 +33,49 @@ export default {
       gridData:[
         {
           movieTitle: 'Ant-Man and the Wasp: Quantumania',
-          director: 'tmp',
+          director: 'Peyton Reed',
           distributor: 'Walt Disney',
           gross: 104000000,
           totalGross: 104000000
         },
         {
           movieTitle: 'Avatar: The Way of Water',
-          director: 'tmp',
+          director: 'James Cameron',
           distributor: '20th Century Studios',
           gross: 6118000,
           totalGross: 657075991
         },
         {
           movieTitle: "Magic Mike’s Last Dance",
-          director: 'tmp',
+          director: 'Steven Soderbergh',
           distributor: 'Warner Bros',
           gross: 5525000,
           totalGross: 18115454
         },
         {
           movieTitle: 'Puss in Boots: The Last Wish',
-          director: 'tmp',
+          director: 'Joel Crawford',
           distributor: 'Universal',
           gross: 5260000,
           totalGross: 166076100
         },
         {
           movieTitle: 'Knock at the Cabin',
-          director: 'tmp',
+          director: 'M. Night Shyamalan',
           distributor: 'Universal',
           gross: 3900000,
           totalGross: 30372270
         },
         {
           movieTitle: '80 for Brady',
-          director: 'tmp',
+          director: 'Kyle Marvin',
           distributor: 'Paramount Pictures',
           gross: 3600000,
           totalGross: 32248000
         },
         {
           movieTitle: 'Titanic (25th Anniversary)',
-          director: 'tmp',
+          director: 'James Cameron',
           distributor: 'Paramount Pictures',
           gross: 2290000,
           totalGross: 671776000
