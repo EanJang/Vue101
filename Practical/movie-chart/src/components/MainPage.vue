@@ -7,8 +7,6 @@
     <p>
       Visit  <a href="https://www.the-numbers.com/weekend-box-office-chart" target="_blank">THE NUMBERS</a> web page for more details.
     </p>
-  </div>
-  <div>
     <GridChart
       :data="gridData"
       :columns="gridColumns"
@@ -93,5 +91,9 @@ h3 {
 }
 a {
   color: #42b983;
+}
+.main {
+  display: flex;
+  flex-direction: column;
 }
 </style>
