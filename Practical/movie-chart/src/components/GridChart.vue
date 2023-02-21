@@ -1,8 +1,9 @@
 <template>
     <table>
         <thead>
-            <tr>
+            <tr v-for="column in columns" :key="column">
                 <th>
+                    {{ column }}
                 </th>
             </tr>
         </thead>
@@ -21,6 +22,9 @@ export default {
     props: {
         data: Array,
         columns: Array
+    },
+    mounted() {
+        console.log(this.data);
     }
 }
 </script>
