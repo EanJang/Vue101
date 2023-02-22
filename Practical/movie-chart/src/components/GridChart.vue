@@ -1,15 +1,16 @@
 <template>
     <table>
         <thead>
-            <tr v-for="column in columns" :key="column">
-                <th>
+            <tr>
+                <th v-for="(column, index) in columns" :key="index">
                     {{ column }}
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
+            <tr v-for="movie in data" :key="movie">
+                <td v-for="column in columns" :key="column">
+                    {{ column[0] }}
                 </td>
             </tr>
         </tbody>
@@ -24,7 +25,7 @@ export default {
         columns: Array
     },
     mounted() {
-        console.log(this.data);
+        console.log(this.data[0]);
     }
 }
 </script>
