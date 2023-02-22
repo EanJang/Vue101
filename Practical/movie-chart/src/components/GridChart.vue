@@ -1,20 +1,22 @@
 <template>
-    <table>
-        <thead>
-            <tr>
-                <th v-for="(column, index) in columns" :key="index">
-                    {{ column }}
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="movie in data" :key="movie">
-                <td v-for="column in columns" :key="column">
-                    {{ column[0] }}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th v-for="(column, index) in columns" :key="index">
+                        {{ column }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="movie in data" :key="movie">
+                    <td v-for="column in columns" :key="column">
+                        {{ column[0] }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script>
@@ -31,7 +33,13 @@ export default {
 </script>
 
 <style scoped>
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 table {
+    width: 85%;
     border: 2px solid #42b983;
     border-radius: 3px;
     background-color: #fff;
