@@ -11,7 +11,7 @@
             <tbody>
                 <tr v-for="movie in data" :key="movie">
                     <td v-for="column in columns" :key="column">
-                        {{ column[0] }}
+                        {{ movie[column] }}
                     </td>
                 </tr>
             </tbody>

@@ -30,53 +30,53 @@ export default {
       gridColumns: ['Movie Title', 'Director', 'Distributor', 'Gross', 'Total Gross'],
       gridData:[
         {
-          movieTitle: 'Ant-Man and the Wasp: Quantumania',
-          director: 'Peyton Reed',
-          distributor: 'Walt Disney',
-          gross: 104000000,
-          totalGross: 104000000
+          'Movie Title': 'Ant-Man and the Wasp: Quantumania',
+          'Director': 'Peyton Reed',
+          'Distributor': 'Walt Disney',
+          'Gross': 104000000,
+          'Total Gross': 104000000
         },
         {
-          movieTitle: 'Avatar: The Way of Water',
-          director: 'James Cameron',
-          distributor: '20th Century Studios',
-          gross: 6118000,
-          totalGross: 657075991
+          'Movie Title': 'Avatar: The Way of Water',
+          'Director': 'James Cameron',
+          'Distributor': '20th Century Studios',
+          'Gross': 6118000,
+          'Total Gross': 657075991
         },
         {
-          movieTitle: "Magic Mike’s Last Dance",
-          director: 'Steven Soderbergh',
-          distributor: 'Warner Bros',
-          gross: 5525000,
-          totalGross: 18115454
+          'Movie Title': "Magic Mike’s Last Dance",
+          'Director': 'Steven Soderbergh',
+          'Distributor': 'Warner Bros',
+          'Gross': 5525000,
+          'Total Gross': 18115454
         },
         {
-          movieTitle: 'Puss in Boots: The Last Wish',
-          director: 'Joel Crawford',
-          distributor: 'Universal',
-          gross: 5260000,
-          totalGross: 166076100
+          'Movie Title': 'Puss in Boots: The Last Wish',
+          'Director': 'Joel Crawford',
+          'Distributor': 'Universal',
+          'Gross': 5260000,
+          'Total Gross': 166076100
         },
         {
-          movieTitle: 'Knock at the Cabin',
-          director: 'M. Night Shyamalan',
-          distributor: 'Universal',
-          gross: 3900000,
-          totalGross: 30372270
+          'Movie Title': 'Knock at the Cabin',
+          'Director': 'M. Night Shyamalan',
+          'Distributor': 'Universal',
+          'Gross': 3900000,
+          'Total Gross': 30372270
         },
         {
-          movieTitle: '80 for Brady',
-          director: 'Kyle Marvin',
-          distributor: 'Paramount Pictures',
-          gross: 3600000,
-          totalGross: 32248000
+          'Movie Title': '80 for Brady',
+          'Director': 'Kyle Marvin',
+          'Distributor': 'Paramount Pictures',
+          'Gross': 3600000,
+          'Total Gross': 32248000
         },
         {
-          movieTitle: 'Titanic (25th Anniversary)',
-          director: 'James Cameron',
-          distributor: 'Paramount Pictures',
-          gross: 2290000,
-          totalGross: 671776000
+          'Movie Title': 'Titanic (25th Anniversary)',
+          'Director': 'James Cameron',
+          'Distributor': 'Paramount Pictures',
+          'Gross': 2290000,
+          'Total Gross': 671776000
         },
       ]
     }
