@@ -1,3 +1,5 @@
+const { default: axios } = require("axios")
+
 <template>
   <div class="main">
     <h1>{{ msg }}</h1>
@@ -16,6 +18,7 @@
 
 <script>
 import GridChart from './GridChart'
+const axios = require('axios').default;
 
 export default {
   name: 'MainPage',
@@ -24,6 +27,30 @@ export default {
   },
   components: {
     GridChart
+  },
+  data() {
+    return {
+      gridData: [],
+      gridColumns: []
+    }
+  },
+  methods: {
+    getColumn() {
+      axios.get('http://localhost:3000/gridColumns').then((res) => {
+        console.log(res.data);
+        this.gridColumns.push(...res.data);
+      })
+    },
+    getMovieData() {
+      axios.get('http://localhost:3000/gridData').then((res) => {
+        console.log(res.data);
+        this.gridData.push(...res.data);
+      })
+    }
+  },
+  mounted() {
+    this.getColumn();
+    this.getMovieData();
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="table-wrapper">
-        <table>
+        <table v-if=data>
             <thead>
                 <tr>
                     <th v-for="(column, index) in columns" :key="index">
@@ -27,7 +27,6 @@ export default {
         columns: Array
     },
     mounted() {
-        console.log(this.data[0]);
     }
 }
 </script>
