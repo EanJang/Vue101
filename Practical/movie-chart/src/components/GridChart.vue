@@ -39,7 +39,7 @@ export default {
     margin-top: 35px;
 }
 table {
-    width: 85%;
+    width: 100%;
     border: 2px solid #42b983;
     border-radius: 3px;
     background-color: #fff;
