@@ -1,6 +1,6 @@
 <template>
     <div class="table-wrapper">
-        <table v-if=data>
+        <table v-if=filteredData>
             <thead>
                 <tr>
                     <th v-for="(column, index) in columns" :key="index">
@@ -9,7 +9,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="movie in data" :key="movie">
+                <tr v-for="movie in filteredData" :key="movie">
                     <td v-for="column in columns" :key="column">
                         {{ movie[column] }}
                     </td>
@@ -24,9 +24,22 @@ export default {
     name: 'GridChart',
     props: {
         data: Array,
-        columns: Array
+        columns: Array,
+        searchKey: String
     },
-    mounted() {
+    computed: {
+        filteredData() {
+            const key = this.searchKey;
+            let data = this.data;
+            if (key) {
+                data = data.filter((row) => {
+                        return Object.keys(row).some((k) => {
+                        return String(row[k]).toLowerCase().indexOf(key) > -1
+                    })
+                })
+            }
+            return data;
+        }
     }
 }
 </script>
@@ -39,7 +52,7 @@ export default {
     margin-top: 35px;
 }
 table {
-    width: 100%;
+    width: 1080px;
     border: 2px solid #42b983;
     border-radius: 3px;
     background-color: #fff;

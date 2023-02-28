@@ -10,10 +10,11 @@ const { default: axios } = require("axios")
       Visit  <a href="https://www.the-numbers.com/weekend-box-office-chart" target="_blank">THE NUMBERS</a> web page for more details.
     </p>
     <div class="chart-box">
-      <input class="search-bar" />
+      <input class="search-bar" v-model="searchQuery" />
       <GridChart
         :data="gridData"
         :columns="gridColumns"
+        :searchKey="searchQuery"
       />
     </div>
   </div>
@@ -33,6 +34,7 @@ export default {
   },
   data() {
     return {
+      searchQuery: '',
       gridData: [],
       gridColumns: []
     }
