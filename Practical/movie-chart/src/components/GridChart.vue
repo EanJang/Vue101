@@ -29,7 +29,7 @@ export default {
     },
     computed: {
         filteredData() {
-            const key = this.searchKey;
+            const key = this.searchKey.toLowerCase().trim();
             let data = this.data;
             if (key) {
                 data = data.filter((row) => {
