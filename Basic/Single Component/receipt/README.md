@@ -10,6 +10,12 @@ yarn install
 yarn serve
 ```
 
+### Start json-server
+```
+cd src/assets
+json-server --watch db.json
+```
+
 ### Compiles and minifies for production
 ```
 yarn build
