@@ -7,50 +7,50 @@
           "Movie Title": "Ant-Man and the Wasp: Quantumania",
           "Director": "Peyton Reed",
           "Distributor": "Walt Disney",
-          "Gross": 104000000,
-          "Total Gross": 104000000
+          "Gross": "104,000,000",
+          "Total Gross": "104,000,000"
       },
       {
           "Movie Title": "Avatar: The Way of Water",
           "Director": "James Cameron",
           "Distributor": "20th Century Studios",
-          "Gross": 6118000,
-          "Total Gross": 657075991
+          "Gross": "6,118,000",
+          "Total Gross": "657,075,991"
       },
       {
           "Movie Title": "Magic Mike’s Last Dance",
           "Director": "Steven Soderbergh",
           "Distributor": "Warner Bros",
-          "Gross": 5525000,
-          "Total Gross": 18115454
+          "Gross": "5,525,000",
+          "Total Gross": "18,115,454"
       },
       {
           "Movie Title": "Puss in Boots: The Last Wish",
           "Director": "Joel Crawford",
           "Distributor": "Universal",
-          "Gross": 5260000,
-          "Total Gross": 166076100
+          "Gross": "5,260,000",
+          "Total Gross": "166,076,100"
       },
       {
           "Movie Title": "Knock at the Cabin",
           "Director": "M. Night Shyamalan",
           "Distributor": "Universal",
-          "Gross": 3900000,
-          "Total Gross": 30372270
+          "Gross": "3,900,000",
+          "Total Gross": "30,372,270"
       },
       {
           "Movie Title": "80 for Brady",
           "Director": "Kyle Marvin",
           "Distributor": "Paramount Pictures",
-          "Gross": 3600000,
-          "Total Gross": 32248000
+          "Gross": "3,600,000",
+          "Total Gross": "32,248,000"
       },
       {
           "Movie Title": "Titanic (25th Anniversary)",
           "Director": "James Cameron",
           "Distributor": "Paramount Pictures",
-          "Gross": 2290000,
-          "Total Gross": 671776000
+          "Gross": "2,290,000",
+          "Total Gross": "671,776,000"
       }
   ]
 }
